@@ -3,14 +3,14 @@ const app = express()
 const PORT = 5000
 const mongoose = require('mongoose')  
 const {MONGOURI} = require('./keys')
-app.use(express.static('client/build'));
+//app.use(express.static('client/build'));
 
-if(process.env.NODE_ENV=="production"){
-const path = require('path')                                 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
-  }); 
-}
+// if(process.env.NODE_ENV=="production"){
+// const path = require('path')                                 
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+//   }); 
+// }
 
 mongoose.connect(MONGOURI,{
     useNewUrlParser:true,
